@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/*
+ * Colors are applied with utilities on the elements themselves (slate-50 /
+ * slate-950 plus `dark:` variants), so there is nothing to set globally here.
+ * Tailwind v4's `dark:` variant follows prefers-color-scheme by default.
+ */
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
