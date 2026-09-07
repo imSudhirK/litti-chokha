@@ -8,6 +8,7 @@ import { cn } from "@/lib/cn";
 import { formatShortDate, todayKey } from "@/lib/date";
 import { deleteTodo, toggleTodo, updateTodo } from "../actions";
 import type { Todo } from "../types";
+import { DueDateField } from "./due-date-field";
 
 export function TodoItem({ todo }: { todo: Todo }) {
   const [editing, setEditing] = useState(false);
@@ -38,13 +39,8 @@ export function TodoItem({ todo }: { todo: Todo }) {
             required
             autoFocus
           />
-          <Input
-            type="date"
-            name="due_date"
-            defaultValue={todo.due_date ?? ""}
-            aria-label="Due date"
-          />
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
+            <DueDateField defaultValue={todo.due_date ?? ""} />
             <Button type="submit" size="sm" disabled={pending}>
               Save
             </Button>
